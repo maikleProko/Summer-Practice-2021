@@ -106,29 +106,29 @@ public class Main extends JFrame
                 });
             }
 
-            if (item.getText() == "Справка"){
-                item.addMouseListener(new MouseAdapter() {
-                    @Override
-                    public void mousePressed(MouseEvent e) {
-                        JOptionPane.showMessageDialog(null,  "Данная программа представляет собой визуализатор\n" +
-                                "алгоритма Флойда-Уоршелла. Граф можно ввести двумя путями:" +
-                                "\nвручную добавив вершины и рёбра на рабочей области,\n" +
-                                "с учетом того, что веса ребер представляют собой целые неотрицательные числа." +
-                                "\nВторой вариант — записать матрицу смежности в файл и загрузить его." +
-                                "\nВ данном случае чтобы показать отсутствие ребра между вершиной i и j,\nследует ввести число -1.", "Reference", JOptionPane.INFORMATION_MESSAGE);
-                    }
-                });
-            }
+                if (item.getText() == "Справка"){
+                    item.addMouseListener(new MouseAdapter() {
+                        @Override
+                        public void mousePressed(MouseEvent e) {
+                            JOptionPane.showMessageDialog(null,  "Данная программа представляет собой визуализатор\n" +
+                                    "алгоритма Флойда-Уоршелла. Граф можно ввести двумя путями:" +
+                                    "\nвручную добавив вершины и рёбра на рабочей области,\n" +
+                                    "с учетом того, что веса ребер представляют собой целые неотрицательные числа." +
+                                    "\nВторой вариант — записать матрицу смежности в файл и загрузить его." +
+                                    "\nВ данном случае чтобы показать отсутствие ребра между вершиной i и j,\nследует ввести число -1.", "Reference", JOptionPane.INFORMATION_MESSAGE);
+                        }
+                    });
+                }
 
-            if (item.getText() == "О программе"){
-                item.addMouseListener(new MouseAdapter() {
-                    @Override
-                    public void mousePressed(MouseEvent e) {
-                        JOptionPane.showMessageDialog(null,  "Разработчики: Михаил Прокофьев, Борисовский Виктор, Ковалёв Павел", "Authors", JOptionPane.INFORMATION_MESSAGE);
+                if (item.getText() == "О программе"){
+                    item.addMouseListener(new MouseAdapter() {
+                        @Override
+                        public void mousePressed(MouseEvent e) {
+                            JOptionPane.showMessageDialog(null,  "Разработчики: Михаил Прокофьев, Борисовский Виктор, Ковалёв Павел", "Authors", JOptionPane.INFORMATION_MESSAGE);
 
-                    }
-                });
-            }
+                        }
+                    });
+                }
             item.setMnemonic(items[i][1].charAt(0)); // русская буква
             // установим клавишу быстрого доступа (латинская буква)
             item.setAccelerator(KeyStroke.getKeyStroke(items[i][2].charAt(0),
@@ -196,7 +196,7 @@ public class Main extends JFrame
         panelRightRightDown.setLayout(boxlayoutRightRightDown);
         getContentPane().setLayout(boxlayoutAll);
 
-        // JButton jButtonNewGraph = new JButton("New_Graph");
+       // JButton jButtonNewGraph = new JButton("New_Graph");
 
 
 
@@ -228,7 +228,8 @@ public class Main extends JFrame
 
         panelCenter.add(panelRightRight);
         panelCenter.add(jTextMatrixSmeshznosti);
-        panelCenter.add(jFieldTable);
+        //panelCenter.add(jFieldTable);
+        panelCenter.add(jFieldScrollPane);
         panelCenter.add(panelRightRightDown);
 
         MouseAdapter addVertexMouseAdapter = mouseAdapterFabric.getAddVertexMouseAdapter();
